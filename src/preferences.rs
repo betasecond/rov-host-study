@@ -34,6 +34,9 @@ use crate::{AppColorScheme, AppModel, AppMsg, slave::video::{VideoEncoder, Video
 pub fn get_data_path() -> PathBuf {
     const APP_DIR_NAME: &str = "rovhost";
     let mut data_path = dirs::data_local_dir().expect("无法找到本地数据文件夹");
+    // 打印获得的路径
+    // println!("获取到的本地数据文件夹路径: {:?}", data_path); //debug专用
+
     data_path.push(APP_DIR_NAME);
     if !data_path.exists() {
         fs::create_dir(data_path.clone()).expect("无法创建应用数据文件夹");

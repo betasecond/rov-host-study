@@ -50,7 +50,7 @@ pub type RpcClient = HttpClient;
 pub type RpcClientBuilder = HttpClientBuilder;
 pub type RpcParams = jsonrpsee_http_client::types::ParamsSer<'static>;
 
-#[tracker::track(pub)]
+#[tracker::track()]
 #[derive(Debug, Derivative)]
 #[derivative(Default)]
 pub struct SlaveModel {
@@ -90,7 +90,7 @@ pub struct SlaveModel {
     pub config_presented: bool,
 }
 
-#[tracker::track(pub)]
+#[tracker::track()]
 #[derive(Debug, Derivative)]
 #[derivative(Default)]
 pub struct SlaveInfoModel {
